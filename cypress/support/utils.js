@@ -17,7 +17,21 @@ export const generateDate = () => {
   return `${dia}/${mes}/${ano}`;
 };
 
+export const getMesAtual = () => {
+  const dataAtual = new Date();
+  const mes = String(dataAtual.getMonth() + 1).padStart(2, '0'); // Janeiro é 0
+  return mes;
+};
+
+export const getAnoAtual = () => {
+  const dataAtual = new Date();
+  const ano = String(dataAtual.getFullYear());
+  return ano;
+};
+
 export default {
-  generateDate
+  generateDate,
+  getMesAtual,
+  getAnoAtual
 }
 

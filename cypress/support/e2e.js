@@ -17,6 +17,7 @@
 import './commands'
 import './contas_commands'
 import './movimentacao_commands'
+import './resumo_commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

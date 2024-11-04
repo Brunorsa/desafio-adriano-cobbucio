@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 import { generateUsers } from "../support/utils";
 
-const newConta = generateUsers();
+
 
 let userNaoCdastrado;
 
@@ -15,6 +15,8 @@ describe('Feature 02 - Contas', () => {
     cy.loginConta(userNaoCdastrado[1].email, userNaoCdastrado[1].password)
   })
   it('Criar adicionar 2 contas', () => {
+    const newConta = generateUsers();
+
     cy.visit('/')
     cy.criarConta(newConta.conta);
     cy.criarConta(newConta.conta + 1);
@@ -26,6 +28,8 @@ describe('Feature 02 - Contas', () => {
     cy.get('tr:visible').should('have.length.greaterThan', 0);
   });
   it('Validar alteração do nome das contas', () => {
+    const newConta = generateUsers();
+    
     cy.visit('/contas');
     cy.alterarNomeContas(newConta.conta);
     cy.exibirAlerta().should('have.text', 'Conta alterada com sucesso!')
